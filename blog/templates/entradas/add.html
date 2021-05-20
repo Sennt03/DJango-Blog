@@ -1,0 +1,22 @@
+{% extends 'layout/add.html' %}
+
+{% block title %}Añadir Entrada{% endblock title %}
+
+{% block add %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message-err-auth">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+   <div class="add">
+        <h3>Añadir Entrada</h3>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+
+            <input type="submit">
+        </form>
+   </div>
+{% endblock add %}

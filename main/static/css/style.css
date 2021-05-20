@@ -1,0 +1,454 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Helvetica;
+    min-height: 100vh;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.message-err-auth{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 10px;
+    background: #ffffff26;
+    border-radius: 5px;
+    height: fit-content;
+}
+
+/* HEADER */
+header{
+    background: #ee9ca7;
+    background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);
+    background: linear-gradient(to right, #ffdde15e, #ee9ca7a6), url(/static/img/header.jpg);
+    height: 400px;
+    background-size: cover;
+    color: #fff;
+    font-size: 20px;
+}
+
+header div{
+    width: 100%;
+    height: 400px;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #00000038;
+}
+
+/* NAV */
+#nav{
+    background: #7b5c63;
+    color: #fff;
+}
+
+#nav input[type="checkbox"]{
+    display: none;
+}
+
+#nav > ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#nav > ul > li{
+    width: 33%;
+    position: relative;
+}
+
+#nav > ul > li > a, #nav > ul > li > label, #nav > ul > li > ul > li > a{
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+#nav > ul > li > ul{
+    width: 100%;
+}
+
+#nav > ul > li:hover > a, #nav > ul > li:hover > label, #nav > ul > li > ul > li:hover > a{
+    background: #8a6971;
+}
+
+#nav > ul > li > ul{
+    display: none;
+    position: absolute;
+    background: #7b5c63;
+}
+
+#nav > ul > li > input:checked ~ ul{
+    display: block;
+}
+
+#nav ul{
+    list-style: none;
+}
+
+#nav a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* AUTH */
+#auth{
+    background: #ee9ca7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);
+    background: linear-gradient(to bottom, #ffdde14d, #ee9ca70d), url(/static/img/fondo-auth.jpg);
+
+    background-size: cover;
+}
+
+.auth{
+    width: 80%;
+    margin: 0 auto;
+    padding: 85px 0;
+}
+
+.auth .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.auth .icons h3{
+    width: 90px;
+    height: 86px;
+    margin: 0 15% 0 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 20px;
+}
+
+.auth .icons h3.register{
+    width: 100px;
+    height: 92px;
+}
+
+.auth .icons a{
+    background: #fff;
+    color: #150c3c;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.auth form{
+    padding: 0 30px;
+}
+
+.auth form input, .auth form label{
+    display: block;
+}
+
+.auth form input{
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    background: #322e33c9;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+.auth form input[type="submit"]{
+    margin: 25px 0 20px;
+    background: #9c1818b3;
+    cursor: pointer;
+}
+
+.auth form label{
+    font-size: 18px;
+    color: #fff;
+    margin-left: 5%;
+    padding-bottom: 2px;
+    margin-bottom: 9px;
+    border-bottom: 1px solid #fff;
+    width: fit-content;
+}
+
+.auth form a{
+    display: block;
+    text-align: center;
+    color: #Fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth ul{
+    list-style: none;
+}
+
+#auth main > .errorlist{
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 10px;
+    background: #ffffff26;
+    border-radius: 5px;
+    height: fit-content;
+}
+
+/* MAIN */
+.container{
+    width: 80%;
+    margin: 40px auto 0;
+    min-height: 450px;
+}
+
+/* FOOTER */
+footer > p{
+    width: 100%;
+    padding: 20px;
+    background: #7b5c63;
+    color: #fff;
+    text-align: center;
+}
+
+
+/* ADD CATEGORY */
+#add_form{
+    background: #d53369;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cbad6d, #d53369);
+    background: linear-gradient(to right, #cbad6d, #d53369), url(/static/img/add_fondo.jpg);
+    background: linear-gradient(to right, #ffffff40, #d25a826e), url(/static/img/add_fondo.jpg);
+    background-size: cover;
+    min-height: 900px;
+}
+
+.add h3{
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 35px;
+    color: #fff;
+}
+
+.add form{
+    padding: 40px 20px;
+    margin: 0 auto;
+}
+
+.add form a{
+    color: #000;
+}
+
+.add form label, .add form input, .add form textarea, .add form select{
+    display: block;
+}
+
+.add form label{
+    font-size: 20px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+.add form input, .add form textarea, .add form select{
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: none;
+    background: #5801016b;
+    width: 70%;
+    margin: 0 auto 20px;
+    outline: none;
+    color: #fff;
+}
+
+.add form input[type="submit"]{
+    background: #bd0101e0;
+    color: #fff;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+
+/* INDEX */
+#entradas{
+    margin-bottom: 80px;
+}
+
+.ind_entry{
+    margin-bottom: 35px;
+}
+
+.ind_entry .text{
+    margin: 15px 0 10px;
+    border-bottom: 1px dashed;
+    width: fit-content;
+}
+
+.ind_entry .text p{
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.ind_entry .text a{
+    color: #000;
+    text-decoration: none;
+}
+
+.ind_entry p{
+    padding-bottom: 15px;
+}
+
+.ind_entry img{
+    width: 100%;
+    max-height: 550px;
+}
+
+.message{
+    padding: 10px;
+    background: #aa7877d6;
+    color: #fff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* CREAR */
+#crear{
+    display: flex;
+    width: 500px;
+    margin: 0 auto;
+    justify-content: center;
+    box-shadow: 0 0 6px #a37777;
+    margin-bottom: 30px;
+}
+
+#crear a{
+    padding: 10px;
+    margin: 10px;
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+
+.btns-article{
+    padding-top: 20px;
+}
+
+.btns-article a{
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 3px;
+}
+
+.btns-article a.edit{
+    background: #129212;
+}
+
+.btns-article a.delete{
+    background: #de0e0e;
+}
+
+
+@media(min-height: 120000px){
+    footer{
+        position: absolute;
+        width: 100%;
+        bottom: -100px;
+    }
+}
+
+@media(min-width: 768px){
+    .auth{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .auth .icons{
+        display: block;
+    }
+
+    .auth .icons h3.register {
+        width: 105px;
+        height: 97px;
+    }
+
+    .message-err-auth{
+        margin-bottom: 0;
+    }
+
+    #auth main > .errorlist{
+        margin-bottom: 0;
+    }
+
+    /* ADD CATEGORY */
+
+    #add_form .container {
+        width: 90%;
+    }
+
+    .add{
+        width: 50%;
+        margin-left: 50%;
+    }
+
+    .add form{
+        width: 100%;
+    }
+
+    .add form{
+        box-shadow: none;
+        background: none;
+    }
+
+    .add form label{
+        color: #fff;
+        font-weight: normal;
+        margin-bottom: 25px;
+    }
+    
+}
+
+@media(min-width: 1024px){
+    header{
+        font-size: 22px;
+    }
+}
+
+@media(min-width: 1200px){
+    header{
+        font-size: 25px;
+    }
+
+    header .text-header{
+        padding: 0 60px;
+    }
+
+    /* AUTH */
+
+    .auth {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+
+    /* ADD */
+    .add form label{
+        margin-left: 80px;
+    }
+
+    .add form{
+        width: 550px;
+    }
+
+    .add h3{
+        padding-bottom: 0;
+        padding-top: 35px;
+    }
+}

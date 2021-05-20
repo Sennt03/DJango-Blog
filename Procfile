@@ -1,0 +1,1 @@
+web: gunicorn SenntBlog.wsgi --log-file -

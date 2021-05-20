@@ -1,0 +1,49 @@
+{% extends 'layout/layout.html' %}
+
+{% block title %}Entradas - {{category.name}}{% endblock title %}
+
+{% block header %}
+    {% include 'includes/header.html' %}
+{% endblock header %}
+
+{% block content %}
+
+    <div id="crear">
+        <a href="{% url 'add_entrada' %}"><i class="fas fa-plus"></i> Crear Entrada</a>
+        <a href="{% url 'add_categoria' %}"><i class="fas fa-plus"></i> Crear Categoria</a>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <h2>Entradas - {{category.name}}</h2>
+    <div id="entradas">
+        {% if articulos|length > 0 %}
+            {% for article in articulos %}
+            <div class="ind_entry">
+                <div class="text">
+                    <a href="#"><h3>{{article.title}} - {{article.user}}</h3></a>
+                    <p>{{article.created_at}}</p>
+                </div>
+                <p>{{article.content}}</p>
+                {% if article.image != 'null' and article.image.url|length >= 1 %}
+                    <img src="{{article.image.url}}" alt="{{article.title}}">
+                {% endif %}
+                {% if user.id == article.user.id %}
+                    <div class="btns-article">
+                        <a href="{% url 'edit_article' article.id %}" class="edit"><i class="fas fa-pen"></i> Editar</a>
+                        <a href="{% url 'delete_article' article.id %}" class="delete"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                    </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% else %}
+            <h3 style="text-align: center;margin-top: 80px;">No hay entradas para esta categoria, ¡Añade una!</h3>
+        {% endif %}
+    </div>
+{% endblock content %}

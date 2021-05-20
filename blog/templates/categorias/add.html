@@ -1,0 +1,22 @@
+{% extends 'layout/add.html' %}
+
+{% block title %}Añadir Categoria{% endblock title %}
+
+{% block add %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message-err-auth">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+   <div class="add">
+        <h3>Añadir categoria</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+
+            <input type="submit">
+        </form>
+   </div>
+{% endblock add %}

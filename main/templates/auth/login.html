@@ -1,0 +1,34 @@
+{% extends 'layout/auth.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block auth %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message-err-auth">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="auth">
+    
+    <div class="icons">
+        <h3>Login</h3>
+        <a href="{% url 'index' %}"><i class="fas fa-home"></i></a>
+    </div>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <label>Username</label>
+            <input type="text" name="username">
+            
+            <label>Password</label>
+            <input type="password" name="password">
+
+            <input type="submit" value="Iniciar sesion">
+
+            <a href="{% url 'register' %}">¿No tienes cuenta? Registrate</a>
+        </form>
+    </div>
+{% endblock auth %}

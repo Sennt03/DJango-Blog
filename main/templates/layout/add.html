@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %} | SenntBlog</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body id="add_form">
+
+    <nav id="nav">
+        <ul>
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            {% if user.email %}
+                <li>
+                <label for="btn-categorias">Categorias</label>
+                <input type="checkbox" name="btn-categorias" id="btn-categorias">
+                <ul id="ulcategorias">
+                    {% for category in categorys %}
+                        <li><a href="{% url 'category' category.0 %}">{{category.1}}</a></li>
+                    {% endfor %}
+                </ul>
+                </li>
+                <li>
+                    <label for="btn-usuarios">Usuarios</label>
+                    <input type="checkbox" name="btn-usuarios" id="btn-usuarios">
+                    <ul id="ulusuarios">
+                        <li><a href="#">David</a></li>
+                        <li><a href="#">Pepe</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <section class="container">
+        {% block add %}
+
+        {% endblock add %}
+    </section>
+
+</body>
+</html>
