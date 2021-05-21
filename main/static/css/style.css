@@ -321,7 +321,7 @@ footer > p{
 /* CREAR */
 #crear{
     display: flex;
-    width: 500px;
+    width: 80%;
     margin: 0 auto;
     justify-content: center;
     box-shadow: 0 0 6px #a37777;
@@ -411,6 +411,10 @@ footer > p{
         color: #fff;
         font-weight: normal;
         margin-bottom: 25px;
+    }
+
+    #crear{
+        width: 500px;
     }
     
 }
