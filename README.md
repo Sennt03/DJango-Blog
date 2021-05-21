@@ -12,4 +12,4 @@ Puedes:
 * Ver los perfiles de los otros usuarios
 * Ver todas las entradas y clasificarlas por categoria
 
-Link: SenntBlog.com
+Link: [SenntBlog.com](https://senntblog.herokuapp.com/)
